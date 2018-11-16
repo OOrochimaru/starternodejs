@@ -3,7 +3,7 @@ const redis = require('redis');
 const util = require('util');
 
 //redis configuration
-const redisURI = 'redis://127.0.0.1:6379';
+const redisURI = require('../config/ci').redisURI;
 const client = redis.createClient(redisURI);
 client.hget = util.promisify(client.hget);
 

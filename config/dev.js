@@ -6,7 +6,9 @@ module.exports = {
   mongoURI: 'mongodb://ryamseyryam:Asdfg123@ds255463.mlab.com:55463/advancenode',
   cookieKey: '123123123',
   redisURI: 'redis://127.0.0.1:6379',
-  accessKeyId: 'AKIAJ52P7S5MHF7HSJTA',
-  secretAccessKey: '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'
+  // accessKeyId: 'AKIAJ52P7S5MHF7HSJTA',
+  accessKeyId: 'AKIAI2JHNBZHA3ZH5DXQ',
+  // secretAccessKey: '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',
+  secretAccessKey: 'uFT6GOrD49rCDPLJa0MrYka8HqiKd3BAxexkn+r+'
 
 };

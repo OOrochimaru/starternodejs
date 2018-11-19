@@ -58,7 +58,7 @@ class BlogFormReview extends Component {
         <h5>Please confirm your entries</h5>
         {this.renderFields()}
         <h5>Add Photo for this post</h5>
-        <input onChange={this.onFileChange.bind(this)} type="file" accept="image/*" crossOrigin="anonymous" />
+        <input onChange={this.onFileChange.bind(this)} name="file" type="file" accept="image/*" crossOrigin="anonymous" />
         {this.renderButtons()}
       </form>
     );

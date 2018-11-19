@@ -14,23 +14,26 @@ export const handleToken = token => async dispatch => {
 };
 
 export const submitBlog = (values, file, history) => async dispatch => {
-  console.log(dispatch);
   console.log(file);
   const uploadCongif = await axios.get('/api/upload');
   console.log(uploadCongif.data.url);
-  await axios.put(uploadCongif.data.url, file,
+  await axios.post(uploadCongif.data.url, file,
     {
       headers:
       {
-        'Content-Type': file.type,
+        Bucket: 's3-blog-bucket',
+        Key: uploadCongif.data.key,
+        ACL: 'public-read-write',
+        Body: file,
+        ContentType: file.type,
         
       }
     }
   );
-  const res = await axios.post('/api/blogs', values);
+  // const res = await axios.post('/api/blogs', values);
 
-  history.push('/blogs');
-  dispatch({ type: FETCH_BLOG, payload: res.data });
+  // history.push('/blogs');
+  // dispatch({ type: FETCH_BLOG, payload: res.data });
 };
 
 export const fetchBlogs = () => async dispatch => {
